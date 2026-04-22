@@ -883,6 +883,11 @@
   /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
+  // Bắt buộc ẩn preloader nhanh hơn thay vì chờ toàn bộ trang tải xong
+  $(document).ready(function() {
+    setTimeout(preloader, 800);
+  });
+
   $(window).on("load", function () {
     preloader();
 
