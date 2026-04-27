@@ -62,7 +62,7 @@
           scrollTop: $(this.hash).offset().top,
         },
         1000,
-        "easeInOutExpo"
+        "easeInOutExpo",
       );
       return false;
     });
@@ -214,7 +214,7 @@
     if ($(this).attr("data-background")) {
       $(this).css(
         "background-image",
-        "url(" + $(this).data("background") + ")"
+        "url(" + $(this).data("background") + ")",
       );
     }
   });
@@ -497,8 +497,8 @@
               "</span> </div>" +
               '<div class="box"><div>%S</div> <span>' +
               $("#clock").data("text-second") +
-              "</span> </div>"
-          )
+              "</span> </div>",
+          ),
         );
       }
     });
@@ -719,7 +719,7 @@
             infowindow.setContent(locations[i][0]);
             infowindow.open(map, marker);
           };
-        })(marker, i)
+        })(marker, i),
       );
     }
   }
@@ -800,7 +800,7 @@
                     .replace(/>/g, "&gt;")
                     .replace(/</g, "&lt;")
                     .replace(/"/g, "&quot;") +
-                  "</p></div>"
+                  "</p></div>",
               );
               $("#success").html(res.message).slideDown("slow");
               setTimeout(function () {
@@ -883,14 +883,13 @@
   /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
-  // Bắt buộc ẩn preloader nhanh hơn thay vì chờ toàn bộ trang tải xong
+
+  // Ẩn trái tim ngay khi khung web tải xong, không bắt người dùng đợi ảnh nặng
   $(document).ready(function() {
-    setTimeout(preloader, 800);
+    preloader();
   });
 
   $(window).on("load", function () {
-    preloader();
-
     toggleMobileNavigation();
 
     smallNavFunctionality();
@@ -899,7 +898,7 @@
     if ($(".couple-section").length && window.outerWidth > 991) {
       setTwoColEqHeight(
         $(".couple-section .img-holder"),
-        $(".couple-section .details")
+        $(".couple-section .details"),
       );
     }
 
@@ -928,7 +927,7 @@
       "resizeTimer",
       setTimeout(function () {
         smallNavFunctionality();
-      }, 200)
+      }, 200),
     );
   });
 })(window.jQuery);
